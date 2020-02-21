@@ -1,0 +1,20 @@
+﻿@model RecipeWorld.Models.Cook
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show Chef</h2>
+@{
+    <a href="/Cook/List">Back</a>
+
+    <div class="ShowCook">
+        <div class="ShowCookDetails"><label>First Name :</label>@Model.CookFname</div>
+        <div class="ShowCookDetails"><label>Last Name :</label> @Model.CookLname</div>
+        <div class="ShowCookDetails"><label>Email:</label>@Model.CookEmail</div>
+        <div class="ShowCookDetails"><label>Phone:</label> @Model.CookPhone</div>
+        <div class="ShowCookDetails"><label>Experience:</label> @Model.CookExperience</div>
+        <div class="ShowCookDetails"><label>Speciality:</label> @Model.CookSpeciality</div>
+    </div>
+    <a href="/Cook/Update/@Model.CookId ">Update</a>
+    <span class="ShowCookUpdLi"><a href="/Cook/Delete/@Model.CookId">Delete</a></span>
+}

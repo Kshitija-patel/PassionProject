@@ -1,0 +1,14 @@
+﻿@model RecipeWorld.Models.Recipe
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <span class="DeleteText">Are you sure you want to delete @Model.RecipeTitle Recipe ?</span>
+</div>
+<div class="DelLinks">
+    <a href="/Recipe/ConfirmDelete/@Model.RecipeID" class="DelLink">Delete</a>
+    <a href="/Recipe/List" class="CanLink">Cancel</a>
+</div>

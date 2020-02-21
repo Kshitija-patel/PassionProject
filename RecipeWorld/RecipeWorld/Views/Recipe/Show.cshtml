@@ -1,0 +1,35 @@
+﻿@model RecipeWorld.Models.ViewModels.ShowComments
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show Recipe</h2>
+
+<a href="/Recipe/List">Back</a>
+<div class="RecipeDetails">
+    <div class="RecipeDiv"><label>Title </label> : @Model.recipe.RecipeTitle</div>
+    <div class="RecipeDiv"><label>Cook Name : </label>@Model.recipe.Cooks.CookFname</div>
+    <div class="RecipeDiv"><label>Description : </label>@Model.recipe.RecipeDescription</div>
+    <div class="RecipeDiv"><label>Cook Time: </label>@Model.recipe.RecipeCookTime</div>
+    <div class="RecipeDiv"><label>Serves: </label>@Model.recipe.RecipeServes</div>
+    <div class="RecipeDiv"><label>Ingredients: </label>@Model.recipe.RecipeIngredients</div>
+    <div class="RecipeDiv"><label>Prodecure: </label>@Model.recipe.RecipeProcedure</div>
+    <div class="RecipeDiv">
+        <div class="RecipeCommentDiv">
+            <label class="commentlabel">Comments:</label>
+            <a href="/Comment/Add/@Model.recipe.RecipeID">Add Comment</a>
+            @{
+                foreach (var comment in Model.comments)
+                {   <div class="commentcontent">
+                        <p>@comment.CommentContent</p>
+                        <a href="/Comment/Update/@comment.CommentID">Update</a>
+                        <span class="RecipeDelLi"><a href="/Comment/Delete/@comment.CommentID">Delete</a></span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<a href="/Recipe/Update/@Model.recipe.RecipeID">Update</a>
+<span class="RecipeDelLi"><a href="/Recipe/Delete/@Model.recipe.RecipeID">Delete</a></span>

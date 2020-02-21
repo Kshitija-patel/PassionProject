@@ -1,0 +1,37 @@
+﻿@model List<RecipeWorld.Models.Cook> 
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add a New Chef</h2>
+
+<form method="post" action="/Cook/Add">
+    <div class="CookDiv">
+        <label>First Name:</label>
+        <input type="text" name="CookFname" />
+    </div>
+    <div class="CookDiv">
+        <label>Last Name:</label>
+        <input type="text" name="CookLname" />
+    </div>
+    <div class="CookDiv">
+        <label>Email:</label>
+        <input type="text" name="CookEmail" />
+    </div>
+    <div class="CookDiv">
+        <label>Phone:</label>
+        <input type="number" name="CookPhone" />
+    </div>
+    <div class="CookDiv">
+        <label>Experience:</label>
+        <input type="number" name="CookExperience" />
+    </div>
+    <div class="CookDiv">
+        <label>Speciality:</label>
+        <input type="text" name="CookSpeciality" />
+    </div>
+    <div class="CookDiv">
+        <input type="submit" value="Add Chef" class="AddCookBtn">
+    </div>
+
+</form>

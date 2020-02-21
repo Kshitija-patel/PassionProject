@@ -1,0 +1,52 @@
+﻿@model RecipeWorld.Models.ViewModels.UpdateRecipe
+@{
+    ViewBag.Title = "Update";
+}
+<h2>Update Recipe</h2>
+
+<form method="post" action="/Recipe/Update/@Model.recipe.RecipeID">
+    <div  class="RecipeDiv">
+        <label>Title:</label>
+        <input type="text" name="RecipeTitle" value="@Model.recipe.RecipeTitle"/>
+    </div>
+    <div  class="RecipeDiv">
+        <label>Cook Name:</label>
+        <select type="text" name="CookID" id="CookID">
+            @{
+                foreach (var cook in @Model.cook)
+                {
+                    var selected = "";
+                    if(cook.CookId == Model.recipe.CookID)
+                    {
+                        selected = "selected";
+                    }
+                    <option value="@cook.CookId" @selected>@cook.CookFname</option>
+                }
+            }
+        </select>
+    </div>
+    <div  class="RecipeDiv">
+        <label>Description:</label>
+        <input type="text" name="RecipeDescription" value="@Model.recipe.RecipeDescription"/>
+    </div>
+    <div  class="RecipeDiv">
+        <label>Cook Time:</label>
+        <input type="text" name="RecipeCooktime" value="@Model.recipe.RecipeCookTime"/>
+    </div>
+    <div  class="RecipeDiv">
+        <label>Serves:</label>
+        <input type="number" name="RecipeServes" value="@Model.recipe.RecipeServes" />
+    </div>
+    <div  class="RecipeDiv">
+        <label>Ingredients:</label>
+        <textarea name="RecipeIngredients">@Model.recipe.RecipeIngredients</textarea>
+    </div>
+    <div  class="RecipeDiv">
+        <label>Procedure:</label>
+        <textarea name="RecipeProcedure">@Model.recipe.RecipeProcedure</textarea>
+    </div>
+    <div  class="RecipeDiv">
+        <input type="submit" value="Update Recipe" class="UpdateRecipeBtn">
+    </div>
+
+</form>

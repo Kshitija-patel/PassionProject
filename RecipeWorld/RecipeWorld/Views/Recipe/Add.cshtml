@@ -1,0 +1,48 @@
+﻿@model List<RecipeWorld.Models.Cook>
+@{
+    ViewBag.Title = "Add";
+}
+<h2>Add a New Cook</h2>
+
+<form method="post" action="/Recipe/Add">
+    <div class="RecipeDiv">
+        <label>Title:</label>
+        <input type="text" name="RecipeTitle" />
+    </div>
+    <div class="RecipeDiv">
+        <label>Cook Name:</label>
+        <select type="text" name="CookID" id="CookID">
+            @{
+                foreach (var cook in Model)
+                {
+                    <option value="@cook.CookId">@cook.CookFname</option>
+
+                }
+            }
+        </select>
+    </div>
+    <div class="RecipeDiv">
+        <label>Description:</label>
+        <input type="text" name="RecipeDescription" />
+    </div>
+    <div class="RecipeDiv">
+        <label>Cook Time:</label>
+        <input type="text" name="RecipeCooktime" />
+    </div>
+    <div class="RecipeDiv">
+        <label>Serves:</label>
+        <input type="number" name="RecipeServes" />
+    </div>
+    <div class="RecipeDiv">
+        <label>Ingredients:</label>
+        <textarea name="RecipeIngredients"></textarea>
+    </div>
+    <div class="RecipeDiv">
+        <label>Prodecure:</label>
+        <textarea name="RecipeProcedure"></textarea>
+    </div>
+    <div class="RecipeDiv">
+        <input type="submit" value="Add Recipe" class="AddRecipeBtn">
+    </div>
+
+</form>

@@ -1,0 +1,14 @@
+﻿@model List<RecipeWorld.Models.Cook>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Chefs</h2>
+@{ 
+    <div class="CookAddLi"><a href="/Cook/Add/">Add Chef</a></div>
+
+    foreach(var Cook in Model)
+    {
+            <div class="CookList"><a href="/Cook/Show/@Cook.CookId" class="CooKListLi">@Cook.CookFname</a></div>
+    }
+}

@@ -1,0 +1,26 @@
+﻿@model RecipeWorld.Models.ViewModels.UpdateComments
+@{
+    ViewBag.Title = "Update";
+}
+<h2>Update Comment</h2>
+
+<form method="post" action="/Comment/Update/@Model.comment.CommentID">
+  
+    <div class="CommentDiv">
+        <label>Cook Name:</label>
+        <span>@Model.comment.Cooks.CookFname</span>
+        <input type="hidden" name="CookId" value="@Model.comment.Cooks.CookId" />
+    </div>
+    <div class="CommentDiv">
+        <label>Recipe Name</label>
+        <span>@Model.comment.Recipes.RecipeTitle</span>
+        <input type="hidden" name="RecipeId" value="@Model.comment.RecipeID" />
+    </div>
+    <div class="CommentDiv">
+        <label>Comments :</label>
+        <textarea name="CommentContent">@Model.comment.CommentContent</textarea>
+    </div>
+    <div class="CommentDiv">
+        <input type="submit" value="Update Comment" class="UpdateCommentBtn" />
+    </div>
+</form>

@@ -1,0 +1,33 @@
+﻿@model RecipeWorld.Models.ViewModels.AddComments
+
+@{
+    ViewBag.Title = "Add";
+}
+<h2>Add a Comment</h2>
+
+<form method="post" action="/Comment/Add/@Model.recipe.RecipeID">
+    <div class="CommentDiv">
+        <label> Cook Name:</label>
+        <select type="text" name="CookId">
+            @{
+                //A rendering loop for presenting a list of species
+                //The pet should be one of these species
+                foreach (var cooks in Model.cook)
+                {
+                    <option value="@cooks.CookId">@cooks.CookFname</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="CommentDiv">
+        <label>Recipe Name:</label>
+        <span>@Model.recipe.RecipeTitle</span>
+    </div>
+    <div class="CommentDiv">
+        <label>Comments :</label>
+        <textarea name="CommentContent"></textarea>
+    </div>
+    <div class="CommentDiv">
+        <input type="submit" value="Add Comment" class="AddCommentBtn"/>
+    </div>
+</form>

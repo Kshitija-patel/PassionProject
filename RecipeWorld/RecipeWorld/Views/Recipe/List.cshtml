@@ -1,0 +1,18 @@
+﻿@model List<RecipeWorld.Models.Recipe>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Recipe List</h2>
+
+@{
+    <div class="RecipeAddLi"><a href="/Recipe/Add/">Add Recipe</a></div>
+
+        foreach (var Recipe in Model)
+        {
+            <div class="addPet_details">
+                <span><a href="/Recipe/Show/@Recipe.RecipeID">@Recipe.RecipeTitle</a></span>
+            </div>
+        }
+    }

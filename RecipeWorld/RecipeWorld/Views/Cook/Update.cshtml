@@ -1,0 +1,39 @@
+﻿@model RecipeWorld.Models.Cook
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update Chef</h2>
+@{
+    <a href="/Cook/List">Back</a>
+
+    <form method="post" action="/Cook/Update/@Model.CookId">
+        <div class="CookDiv">
+            <label>First Name:</label>
+            <input type="text" name="CookFname" value="@Model.CookFname" />
+        </div>
+        <div class="CookDiv">
+            <label>Last Name:</label>
+            <input type="text" name="CookLname" value="@Model.CookFname" />
+        </div>
+        <div class="CookDiv">
+            <label>Email:</label>
+            <input type="text" name="CookEmail" value="@Model.CookEmail" />
+        </div>
+        <div class="CookDiv">
+            <label>Phone:</label>
+            <input type="number" name="CookPhone" value="@Model.CookPhone" />
+        </div>
+        <div class="CookDiv">
+            <label>Experience:</label>
+            <input type="number" name="CookExperience" value="@Model.CookExperience" />
+        </div>
+        <div class="CookDiv">
+            <label>Speciality:</label>
+            <input type="text" name="CookSpeciality" value="@Model.CookSpeciality" />
+        </div>
+        <div class="CookDiv">
+            <input type="submit" value="Update Chef" class="UpdateCookBtn">
+        </div>
+    </form>
+}
